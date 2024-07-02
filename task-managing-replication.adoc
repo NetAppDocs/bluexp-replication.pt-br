@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: task-managing-replication.html 
+keywords: replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, source, destination, schedule, relationship, break, resync, max transfer, maximum transfer rate, rate, transfer rate, reverse resync, status, replication status, disaster recovery, DR, archive, archiving, retention 
+summary: Depois de configurar a replicação de dados entre dois sistemas, você pode gerenciar o agendamento e o relacionamento de replicação de dados do BlueXP . 
+---
+= Gerenciar a replicação de dados
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Depois de configurar a replicação de dados entre dois sistemas, você pode gerenciar o agendamento e o relacionamento de replicação de dados do BlueXP .
+
+.Passos
+. No menu de navegação, selecione *proteção > replicação*.
+. Revise o status das relações de replicação de dados para verificar se elas estão íntegras.
++
+
+NOTE: Se o Status de uma relação estiver ocioso e o Mirror State não for inicializado, você deverá inicializar a relação do sistema de destino para que a replicação de dados ocorra de acordo com a programação definida. Você pode inicializar o relacionamento usando o System Manager ou a interface de linha de comando (CLI). Esses estados podem aparecer quando o sistema de destino falha e, em seguida, volta online.
+
+. Selecione o menu de ação para uma relação de volume e escolha uma das ações disponíveis.
++
+image:screenshot_replication_managing.gif["Captura de tela: Mostra a lista de ações disponíveis na página Status da replicação."]
+
++
+A tabela a seguir descreve as ações disponíveis:
+
++
+[cols="15,85"]
+|===
+| Ação | Descrição 
+
+
+| Informações | Mostra detalhes sobre a relação de volume: Informações de transferência, informações sobre a última transferência, detalhes sobre o volume e informações sobre a política de proteção atribuída à relação. 
+
+
+| Pausa | Quebra a relação entre os volumes de origem e destino e ativa o volume de destino para acesso aos dados. Essa opção é normalmente usada quando o volume de origem não pode servir dados devido a eventos como corrupção de dados, exclusão acidental ou um estado off-line. https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Saiba como configurar um volume de destino para acesso a dados e reativar um volume de origem na documentação do ONTAP"^] 
+
+
+| Ressincronizar  a| 
+Restabelece uma relação quebrada entre volumes e retoma a replicação de dados de acordo com a programação definida.
+
+
+NOTE: Quando você ressincroniza os volumes, o conteúdo no volume de destino é substituído pelo conteúdo no volume de origem.
+
+Saiba como executar uma ressincronização reversa, que ressincroniza os dados do volume de destino para o volume de origem, vá para o https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Documentação do ONTAP"^].
+
+
+
+| Ressincronização reversa | Inverte as funções dos volumes de origem e destino. O conteúdo do volume de origem original é substituído pelo conteúdo do volume de destino. Isso é útil quando você deseja reativar um volume de origem que ficou offline. Quaisquer dados gravados no volume de origem original entre a última replicação de dados e a hora em que o volume de origem foi desativado não são preservados. 
+
+
+| Editar Agendamento | Permite escolher um agendamento diferente para replicação de dados. 
+
+
+| Editar taxa de transferência máxima | Permite editar a taxa máxima (em kilobytes por segundo) na qual os dados podem ser transferidos. 
+
+
+| Atualização | Inicia uma transferência incremental para atualizar o volume de destino. 
+
+
+| Eliminar | Exclui a relação de proteção de dados entre os volumes de origem e destino, o que significa que a replicação de dados não ocorre mais entre os volumes. Esta ação não ativa o volume de destino para acesso aos dados. Essa ação também excluirá o relacionamento entre pares de cluster e o relacionamento entre pares de VM de storage (SVM), se não houver outros relacionamentos de proteção de dados entre os sistemas. 
+|===
+
+
+.Resultado
+Depois de selecionar uma ação, o BlueXP  atualiza a relação ou a programação.

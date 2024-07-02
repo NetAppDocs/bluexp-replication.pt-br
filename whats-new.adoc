@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes' 
+summary: Saiba o que há de novo com a replicação do BlueXP . 
+---
+= O que há de novo
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Saiba o que há de novo com a replicação do BlueXP .
+
+
+
+== 18 de setembro de 2022
+
+
+
+=== FSX para ONTAP para Cloud Volumes ONTAP
+
+Agora você pode replicar dados de um sistema de arquivos do Amazon FSX for ONTAP para o Cloud Volumes ONTAP.
+
+https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Saiba como configurar a replicação de dados"].
+
+
+
+== 31 de julho de 2022
+
+
+
+=== FSX para ONTAP como a fonte de dados
+
+Agora você pode replicar dados de um sistema de arquivos do Amazon FSX for ONTAP para os seguintes destinos:
+
+* Amazon FSX para ONTAP
+* Cluster ONTAP on-premises
+
+
+https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Saiba como configurar a replicação de dados"].
+
+
+
+== 2 de setembro de 2021
+
+
+
+=== Suporte para o Amazon FSX for ONTAP
+
+Agora você pode replicar dados de um sistema Cloud Volumes ONTAP ou cluster do ONTAP no local para um sistema de arquivos do Amazon FSX for ONTAP.
+
+https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Saiba como configurar a replicação de dados"].
+
+
+
+== 5 de maio de 2021
+
+
+
+=== Interface redesenhada
+
+Redesenhamos o serviço de replicação para facilitar o uso e corresponder à aparência atual da interface do usuário.
+
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-replication/main/media/replication.gif["Uma captura de tela da guia replicação reprojetada no Cloud Manager que mostra uma lista de relacionamentos de volume."]

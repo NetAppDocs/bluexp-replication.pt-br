@@ -1,0 +1,103 @@
+---
+sidebar: sidebar 
+permalink: concept-replication.html 
+keywords: ontap, cluster, discover, manage, BlueXP, hybrid cloud, replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, fanout, cascade, source, destination, disaster recovery, DR, archive, archiving, retention 
+summary: O NetApp SnapMirror replica dados em alta velocidade em LAN ou WAN, para que você tenha alta disponibilidade e rápida replicação de dados em ambientes virtuais e tradicionais. Ao replicar dados para os sistemas de storage da NetApp e atualizar continuamente os dados secundários, os dados permanecem atuais e disponíveis sempre que for necessário. Não são necessários servidores de replicação externos. 
+---
+= Saiba mais sobre a replicação do BlueXP 
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp SnapMirror replica dados em alta velocidade em LAN ou WAN, para que você tenha alta disponibilidade e rápida replicação de dados em ambientes virtuais e tradicionais. Ao replicar dados para os sistemas de storage da NetApp e atualizar continuamente os dados secundários, os dados permanecem atuais e disponíveis sempre que for necessário. Não são necessários servidores de replicação externos.
+
+
+
+== Caraterísticas
+
+* Replique dados entre sistemas de storage ONTAP para dar suporte a backup e recuperação de desastres na nuvem ou entre nuvens.
+* Garanta a confiabilidade do seu ambiente de recuperação de desastres com alta disponibilidade.
+* A replicação eficiente em nível de bloco entre o storage ONTAP é rápida e eficiente, com pontos de recuperação granular para recuperação de desastres e backup.
+
+
+
+
+== Custo
+
+A NetApp não cobra pelo uso da replicação do BlueXP , mas você precisará verificar seu provedor de nuvem para verificar se há taxas de entrada e saída de dados aplicáveis.
+
+
+
+== Ambientes de trabalho compatíveis
+
+O BlueXP  permite a replicação de dados entre os seguintes tipos de ambientes de trabalho.
+
+[cols="30,30"]
+|===
+| Fonte de ambiente de trabalho | Ambientes de trabalho alvo compatíveis 
+
+
+| Cloud Volumes ONTAP  a| 
+* Amazon FSX para ONTAP
+* Cloud Volumes ONTAP
+* Cluster ONTAP no local
+
+
+
+
+| Cluster ONTAP no local  a| 
+* Amazon FSX para ONTAP
+* Cloud Volumes ONTAP
+* Cluster ONTAP no local
+
+
+
+
+| Amazon FSX para ONTAP  a| 
+* Amazon FSX para ONTAP
+* Cloud Volumes ONTAP
+* Cluster ONTAP no local
+
+
+|===
+
+
+== Como a replicação de dados funciona
+
+O BlueXP  simplifica a replicação de dados entre volumes em sistemas ONTAP separados, usando as tecnologias SnapMirror e SnapVault. Basta identificar o volume de origem e o volume de destino e escolher uma política de replicação e uma programação.
+
+Para o Cloud Volumes ONTAP, o BlueXP  compra os discos necessários, configura relacionamentos, aplica a política de replicação e, em seguida, inicia a transferência de linha de base entre volumes.
+
+
+NOTE: A transferência da linha de base inclui uma cópia completa dos dados de origem. As transferências subsequentes contêm cópias diferenciais dos dados de origem.
+
+
+
+== Configurações de proteção de dados compatíveis
+
+O BlueXP  é compatível com configurações de proteção de dados simples, fanout e em cascata:
+
+* Em uma configuração simples, a replicação ocorre do volume A ao volume B..
+* Em uma configuração de fanout, a replicação ocorre do Volume A para vários destinos.
+* Em uma configuração em cascata, a replicação ocorre do volume A para o volume B e do volume B para o volume C.
+
+
+
+
+== Replique dados usando o backup e a recuperação do BlueXP 
+
+A partir da versão do BlueXP  Connector 3.9.31, o backup e a recuperação do BlueXP  permitem replicar dados entre volumes em sistemas ONTAP separados usando tecnologias SnapMirror e SnapVault. Então, se você planeja replicar dados para outros sistemas ONTAP e também deseja criar backups dos mesmos dados para o storage de objetos, talvez queira usar https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html["Backup e recuperação do BlueXP"^] para gerenciar suas necessidades de proteção de dados com um único serviço.
+
+Atualmente, a funcionalidade a seguir só é suportada no serviço de replicação BlueXP  - não ao usar o recurso de replicação do backup e recuperação do BlueXP .
+
+* Não há suporte para uma configuração em cascata em que a replicação ocorra do volume A para o volume B e, em seguida, do volume B para o volume C.
+* Não há suporte para replicação de dados de ou para sistemas FSX for ONTAP.
+* Não há suporte para criar uma replicação única de um volume.
+
+
+Portanto, se você precisar de qualquer uma dessas funcionalidades, use a replicação do BlueXP .

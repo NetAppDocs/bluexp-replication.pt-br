@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: concept-backup-policies.html 
+keywords: snapvault, archive, archiving, retention 
+summary: Diferentemente das políticas de espelhamento, as políticas de Backup do SnapVault replicam cópias Snapshot específicas para um volume de destino. É importante entender como as políticas de backup funcionam se você quiser usar suas próprias políticas em vez das políticas padrão. 
+---
+= Saiba mais sobre políticas de backup
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Diferentemente das políticas de espelhamento, as políticas de backup (SnapVault) replicam cópias Snapshot específicas para um volume de destino. É importante entender como as políticas de backup funcionam se você quiser usar suas próprias políticas em vez das políticas padrão.
+
+
+
+== Entendendo a relação entre rótulos de cópia Snapshot e políticas de backup
+
+Uma política do Snapshot define como o sistema cria cópias Snapshot de volumes. A política especifica quando criar as cópias Snapshot, quantas cópias devem ser mantidas e como rotulá-las. Por exemplo, um sistema pode criar uma cópia Snapshot todos os dias às 12:10 da manhã, manter as duas cópias mais recentes e rotulá-las "diariamente".
+
+Uma política de backup inclui regras que especificam quais cópias Snapshot rotuladas para replicação em um volume de destino e quantas cópias devem reter. Os rótulos definidos em uma política de backup devem corresponder a um ou mais rótulos definidos em uma política de snapshot. Caso contrário, o sistema não poderá replicar cópias Snapshot.
+
+Por exemplo, uma política de backup que inclui os rótulos "diário" e "semanal" resulta na replicação de cópias Snapshot que incluem apenas esses rótulos. Nenhuma outra cópia Snapshot é replicada, como mostrado na imagem a seguir:
+
+image:diagram_replication_snapvault_policy.png["Esta ilustração mostra uma política Snapshot, um volume de origem, as cópias Snapshot criadas a partir da política Snapshot e, em seguida, a replicação dessas cópias Snapshot para um volume de destino com base em uma política de backup, que especifica a replicação das cópias Snapshot com os rótulos \"diário\" e \"semanal\""]
+
+
+
+== Políticas padrão e políticas personalizadas
+
+A política padrão do Snapshot cria cópias Snapshot por hora, diárias e semanais, mantendo seis cópias por hora, duas por dia e duas por semana.
+
+Você pode usar facilmente uma política de backup padrão com a política Snapshot padrão. As políticas de backup padrão replicam cópias Snapshot diárias e semanais, retendo sete cópias Snapshot diárias e 52 cópias Snapshot semanais.
+
+Se você criar políticas personalizadas, os rótulos definidos por essas políticas devem corresponder. Você pode criar políticas personalizadas usando o System Manager.

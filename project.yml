@@ -1,0 +1,44 @@
+---
+settings:
+  name: BlueXP replication
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  langs: pt-br,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es,fr-fr,it-it
+sidebar:
+  entries:
+  - title: Documentos de replicação do BlueXP 
+    url: "/index.html"
+  - title: Notas de lançamento
+    entries:
+    - title: O que há de novo
+      url: "/whats-new.html"
+  - title: Comece agora
+    entries:
+    - title: Saiba mais sobre a replicação do BlueXP 
+      url: "/concept-replication.html"
+    - title: Configurar a replicação de dados
+      url: "/task-replicating-data.html"
+  - title: Gerenciar a replicação de dados
+    url: "/task-managing-replication.html"
+  - title: Saiba mais
+    entries:
+    - title: Saiba mais sobre políticas de replicação
+      url: "/concept-replication-policies.html"
+    - title: Saiba mais sobre políticas de backup
+      url: "/concept-backup-policies.html"
+  - title: Conhecimento e apoio
+    entries:
+    - title: Registre-se para obter suporte
+      url: "/task-support-registration.html"
+    - title: Obtenha ajuda
+      url: "/task-get-help.html"
+  - title: Avisos legais
+    url: "/legal-notices.html"
+product-family:
+  name: BlueXP
+  repo: bluexp-family
