@@ -1,0 +1,15 @@
+= FSX para ONTAP como a fonte de dados
+:allow-uri-read: 
+
+
+
+
+=== FSX para ONTAP como a fonte de dados
+
+Agora você pode replicar dados de um sistema de arquivos do Amazon FSX for ONTAP para os seguintes destinos:
+
+* Amazon FSX para ONTAP
+* Cluster ONTAP on-premises
+
+
+https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Saiba como configurar a replicação de dados"].
