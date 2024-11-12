@@ -1,5 +1,7 @@
 = Suporte para o Amazon FSX for ONTAP
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 
