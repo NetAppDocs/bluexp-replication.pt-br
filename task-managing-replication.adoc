@@ -64,7 +64,7 @@ Saiba como executar uma ressincronização reversa, que ressincroniza os dados d
 | Atualização | Inicia uma transferência incremental para atualizar o volume de destino. 
 
 
-| Eliminar | Exclui a relação de proteção de dados entre os volumes de origem e destino, o que significa que a replicação de dados não ocorre mais entre os volumes. Esta ação não ativa o volume de destino para acesso aos dados. Essa ação também excluirá o relacionamento entre pares de cluster e o relacionamento entre pares de VM de storage (SVM), se não houver outros relacionamentos de proteção de dados entre os sistemas. 
+| Eliminar | Exclui a relação de proteção de dados entre os volumes de origem e destino, o que significa que a replicação de dados não ocorre mais entre os volumes. Esta ação não ativa o volume de destino para acesso aos dados. 
 |===
 
 

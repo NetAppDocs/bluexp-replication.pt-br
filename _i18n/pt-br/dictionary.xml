@@ -202,7 +202,6 @@
   <block id="06933067aafd48425d67bcb01bba5cb6" category="cell">Atualização</block>
   <block id="16685aa35f9f2843a357407642b0d7d9" category="cell">Inicia uma transferência incremental para atualizar o volume de destino.</block>
   <block id="f2a6c498fb90ee345d997f888fce3b18" category="cell">Eliminar</block>
-  <block id="09cd2e52d52004647bc6c39549be0b94" category="cell">Exclui a relação de proteção de dados entre os volumes de origem e destino, o que significa que a replicação de dados não ocorre mais entre os volumes. Esta ação não ativa o volume de destino para acesso aos dados. Essa ação também excluirá o relacionamento entre pares de cluster e o relacionamento entre pares de VM de storage (SVM), se não houver outros relacionamentos de proteção de dados entre os sistemas.</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Resultado</block>
   <block id="b49c40e645fcbad07d8747fe60951eee" category="paragraph">Depois de selecionar uma ação, o BlueXP  atualiza a relação ou a programação.</block>
   <block id="745cc81e54713a1702ada65f4b222bce" category="summary">É possível replicar dados entre ambientes de trabalho do ONTAP escolhendo uma replicação de dados única para transferência de dados ou uma programação recorrente para recuperação de desastres ou retenção de longo prazo. Por exemplo, você pode configurar a replicação de dados de um sistema ONTAP local para o Cloud Volumes ONTAP para recuperação de desastres.</block>
@@ -366,4 +365,5 @@
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">O que há de novo</block>
   <block id="d59048f21fd887ad520398ce677be586" category="sidebar">Saiba mais</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">Conhecimento e apoio</block>
+  <block id="d1325501ee070fd499d61b4cb3ec234d" category="cell">Exclui a relação de proteção de dados entre os volumes de origem e destino, o que significa que a replicação de dados não ocorre mais entre os volumes. Esta ação não ativa o volume de destino para acesso aos dados.</block>
 </blocks>
